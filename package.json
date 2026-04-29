@@ -1,0 +1,16 @@
+{
+  "name": "ascend-liquid",
+  "private": true,
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.4",
+    "tailwindcss": "^4.2.4",
+    "typescript": "^6.0.3"
+  },
+  "scripts": {
+    "build": "npm run build:css && tsc -p tsconfig.json",
+    "build:css": "tailwindcss -i ./styles.css -o ./dist/styles.css --minify",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "dev": "npm run build && python3 -m http.server 4173",
+    "start": "npm run build && python3 -m http.server 4173"
+  }
+}

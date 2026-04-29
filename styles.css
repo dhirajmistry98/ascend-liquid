@@ -1,0 +1,635 @@
+@import "tailwindcss";
+@source "./index.html";
+@source "./src/main.ts";
+
+@layer base {
+  html {
+    background: #0f0201;
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    background: #0f0201;
+    color: #fff7f1;
+    font-family: "Avenir Next", "Inter", "SF Pro Display", "Segoe UI", sans-serif;
+  }
+
+  button,
+  a {
+    font: inherit;
+  }
+
+  svg {
+    display: block;
+  }
+}
+
+@layer utilities {
+  .noise-canvas {
+    opacity: 0.90; 
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    transform: scale(1.001);
+  }
+
+  .hero-type-glow {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.04), 0 12px 36px rgba(0, 0, 0, 0.35);
+  }
+
+  .nav-brand-shell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.26));
+  }
+
+  .nav-brand-shell svg {
+    height: 100%;
+    width: 100%;
+  }
+
+  .panel-brand-shell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    box-shadow: 0 18px 34px rgba(243, 82, 51, 0.16);
+  }
+
+  .panel-brand-shell svg {
+    height: 100%;
+    width: 100%;
+  }
+
+  .panel-shell {
+    background:
+      linear-gradient(180deg, rgba(255, 136, 84, 0.14), rgba(255, 118, 72, 0) 18%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.028), rgba(255, 255, 255, 0) 32%),
+      rgba(26, 11, 11, 0.96);
+    box-shadow:
+      0 42px 120px rgba(0, 0, 0, 0.64),
+      inset 0 0 0 1px rgba(255, 148, 102, 0.09);
+  }
+
+  .panel-shell::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 103, 61, 0.12);
+    pointer-events: none;
+  }
+
+  .wallet-block {
+    background: #1a191f;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.015);
+  }
+
+  .wallet-row {
+    background: rgba(255, 255, 255, 0.01);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.035);
+  }
+
+  .wallet-row:hover {
+    background: rgba(255, 255, 255, 0.015);
+  }
+
+  .wallet-arrow {
+    display: inline-flex;
+    height: 38px;
+    width: 38px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #2a2a31;
+    color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .arrow-tile {
+    height: 58px;
+    width: 58px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(245, 245, 245, 0.94));
+    box-shadow:
+      0 16px 30px rgba(0, 0, 0, 0.24),
+      inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  }
+
+  .hero-coin-shell {
+    height: 92px;
+    width: 92px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.42));
+  }
+
+  .hero-coin-image {
+    filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.36));
+  }
+
+  .buy-thumb {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0)),
+      linear-gradient(180deg, #030303 0%, #111111 100%);
+    position: relative;
+  }
+
+  .buy-thumb::before,
+  .buy-thumb::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 17px;
+    background: rgba(255, 255, 255, 0.09);
+  }
+
+  .buy-thumb::before {
+    top: 20px;
+  }
+
+  .buy-thumb::after {
+    top: 40px;
+    opacity: 0.22;
+  }
+
+  @media (min-width: 1024px) {
+    body {
+      overflow: hidden;
+    }
+
+    .page-shell {
+      max-width: 1360px;
+      height: 100vh;
+      padding-bottom: 1rem;
+    }
+
+    .desktop-stage {
+      min-height: calc(100vh - 78px);
+      align-items: stretch;
+      gap: 2rem;
+    }
+
+    .hero-copy {
+      max-width: 34rem;
+      padding-top: 0 !important;
+    }
+
+    .hero-title {
+      font-size: clamp(4.1rem, 6vw, 6.1rem);
+      max-width: 4.85ch;
+      line-height: 0.92;
+    }
+
+    .hero-summary {
+      max-width: 27.5rem;
+     font-size: 1.3rem !important;
+  line-height: 1.5;
+    }
+
+    .hero-coin-shell {
+      height: 126px;
+      width: 126px;
+    }
+
+    .arrow-tile {
+      height: 68px;
+      width: 68px;
+    }
+
+    .panel-column {
+      max-width: 38.25rem !important;
+    }
+
+    .panel-shell {
+      padding: 0.52rem !important;
+      border-radius: 30px;
+    }
+
+    .panel-shell::before {
+      inset: 4px;
+      border-radius: 25px;
+    }
+
+    .panel-card {
+      padding: 0.86rem 0.8rem 0.7rem !important;
+      border-radius: 27px;
+    }
+
+    .panel-header {
+      margin-bottom: 0.72rem;
+    }
+
+    .panel-brand-shell {
+      height: 44px;
+      width: 44px;
+      margin-bottom: 0.66rem;
+    }
+
+    .panel-title {
+      font-size: 1.64rem;
+      line-height: 1.06;
+    }
+
+    .panel-subtitle {
+      font-size: 0.8rem !important;
+      max-width: 31ch;
+    }
+
+    .panel-sections {
+      gap: 0.74rem;
+    }
+
+    .wallet-block {
+      border-radius: 22px;
+      padding: 0.7rem 0.78rem !important;
+    }
+
+    .wallet-section-title {
+      margin-bottom: 0.62rem;
+      font-size: 0.68rem !important;
+      letter-spacing: 0.125em;
+    }
+
+    .wallet-row {
+      border-radius: 17px;
+      padding-top: 0.5rem !important;
+      padding-bottom: 0.5rem !important;
+    }
+
+    .wallet-name {
+      font-size: 1.04rem !important;
+    }
+
+    .wallet-arrow {
+      height: 44px;
+      width: 44px;
+      border-radius: 13px;
+    }
+
+    .buy-card {
+      border-radius: 20px;
+      background: #050102 !important;
+    }
+
+    .buy-content {
+      min-height: 68px !important;
+      padding: 0.56rem 0.86rem !important;
+    }
+
+    .buy-thumb {
+      width: 98px !important;
+    }
+
+    .buy-title {
+      font-size: 1rem !important;
+    }
+
+    .buy-payments {
+      margin-top: 0.46rem;
+      gap: 0.48rem;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .page-shell {
+      max-width: 760px;
+      padding-bottom: 2rem;
+    }
+
+    .desktop-stage {
+      gap: 2rem;
+      padding-top: 1.25rem;
+    }
+
+    .hero-copy {
+      max-width: 30rem;
+      margin-inline: auto;
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 13vw, 5rem);
+      max-width: 4.9ch;
+      line-height: 0.92;
+      margin-inline: auto;
+    }
+
+    .hero-summary {
+      max-width: 22rem;
+      margin-inline: auto;
+      line-height: 1.14;
+    }
+
+    .hero-coin-shell {
+      height: 80px;
+      width: 80px;
+      margin-inline: auto;
+    }
+
+    .panel-column {
+      max-width: 42rem;
+      margin-inline: auto;
+    }
+
+    .panel-shell {
+      padding: 0.45rem !important;
+      border-radius: 28px;
+    }
+
+    .panel-shell::before {
+      inset: 4px;
+      border-radius: 23px;
+    }
+
+    .panel-card {
+      padding: 1rem 0.95rem 0.95rem !important;
+      border-radius: 24px;
+    }
+
+    .panel-header {
+      margin-bottom: 0.85rem;
+    }
+
+    .panel-title {
+      font-size: clamp(1.55rem, 4.8vw, 2.15rem);
+    }
+
+    .panel-subtitle {
+      font-size: 0.9rem !important;
+      max-width: 27ch;
+      margin-inline: auto;
+    }
+
+    .wallet-block {
+      padding: 0.82rem !important;
+      border-radius: 20px;
+    }
+
+    .wallet-row {
+      padding-top: 0.65rem !important;
+      padding-bottom: 0.65rem !important;
+      border-radius: 16px;
+    }
+
+    .buy-content {
+      min-height: 72px !important;
+      padding: 0.72rem 0.9rem !important;
+    }
+
+    .buy-thumb {
+      width: 86px !important;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-height: 920px) {
+    .page-shell {
+      padding-top: 0.8rem;
+      padding-bottom: 1rem;
+    }
+
+    .desktop-stage {
+      align-items: stretch;
+      gap: 1.5rem;
+      padding-top: 0.7rem;
+    }
+
+    .hero-copy {
+      max-width: 31rem;
+      padding-top: 0 !important;
+    }
+
+    .hero-badge {
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-title {
+      font-size: clamp(3.5rem, 5.5vw, 5.15rem) !important;
+      max-width: 4.9ch;
+    }
+
+    .hero-summary {
+      max-width: 25.25rem;
+      font-size: 0.95rem !important;
+      line-height: 1.12;
+    }
+
+    .arrow-tile {
+      height: 62px;
+      width: 62px;
+    }
+
+    .hero-coin-shell {
+      height: 104px;
+      width: 104px;
+    }
+
+    .panel-column {
+      max-width: 36rem !important;
+    }
+
+    .panel-shell {
+      border-radius: 28px;
+      padding: 0.5rem !important;
+    }
+
+    .panel-shell::before {
+      inset: 4px;
+      border-radius: 23px;
+    }
+
+    .panel-card {
+      border-radius: 24px;
+      padding: 0.72rem 0.76rem 0.72rem !important;
+    }
+
+    .panel-header {
+      margin-bottom: 0.62rem;
+    }
+
+    .panel-brand-shell {
+      margin-bottom: 0.6rem;
+      height: 40px;
+      width: 40px;
+    }
+
+    .panel-title {
+      font-size: clamp(1.46rem, 2vw, 1.82rem);
+      line-height: 1.04;
+    }
+
+    .panel-subtitle {
+      font-size: 0.72rem !important;
+      max-width: 28ch;
+    }
+
+    .panel-sections {
+      gap: 0.54rem;
+    }
+
+    .wallet-block {
+      border-radius: 20px;
+      padding: 0.58rem 0.72rem !important;
+    }
+
+    .wallet-section-title {
+      margin-bottom: 0.55rem;
+      font-size: 0.6rem !important;
+      letter-spacing: 0.14em;
+    }
+
+    .wallet-row {
+      border-radius: 15px;
+      padding-top: 0.4rem !important;
+      padding-bottom: 0.4rem !important;
+    }
+
+    .wallet-name {
+      font-size: 0.96rem !important;
+    }
+
+    .wallet-arrow {
+      height: 36px;
+      width: 36px;
+      border-radius: 9px;
+    }
+
+    .buy-card {
+      border-radius: 16px;
+    }
+
+    .buy-content {
+      min-height: 58px !important;
+      padding: 0.48rem 0.64rem !important;
+    }
+
+    .buy-thumb {
+      width: 78px !important;
+    }
+
+    .buy-title {
+      font-size: 0.88rem !important;
+    }
+
+    .buy-payments {
+      margin-top: 0.4rem;
+      gap: 0.4rem;
+    }
+  }
+
+  @media (max-width: 639px) {
+    .page-shell {
+      max-width: 100%;
+      padding-left: 1.1rem;
+      padding-right: 1.1rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .page-header {
+      margin-left: 0 !important;
+    }
+
+    .desktop-stage {
+      gap: 1.5rem;
+      padding-top: 1rem;
+    }
+
+    .hero-copy {
+      max-width: 21rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.6rem, 14vw, 4.2rem);
+      max-width: 4.95ch;
+    }
+
+    .hero-summary {
+      max-width: 17rem;
+      font-size: 0.95rem !important;
+    }
+
+    .hero-coin-shell {
+      height: 68px;
+      width: 68px;
+    }
+
+    .panel-column {
+      max-width: 100%;
+    }
+
+    .panel-shell {
+      border-radius: 24px;
+      padding: 0.34rem !important;
+    }
+
+    .panel-shell::before {
+      inset: 3px;
+      border-radius: 20px;
+    }
+
+    .panel-card {
+      border-radius: 21px;
+      padding: 0.82rem 0.78rem 0.78rem !important;
+    }
+
+    .panel-brand-shell {
+      height: 36px;
+      width: 36px;
+      margin-bottom: 0.55rem;
+    }
+
+    .panel-title {
+      font-size: clamp(1.42rem, 6.8vw, 1.82rem);
+    }
+
+    .panel-subtitle {
+      font-size: 0.76rem !important;
+      max-width: 28ch;
+    }
+
+    .wallet-block {
+      border-radius: 18px;
+      padding: 0.7rem !important;
+    }
+
+    .wallet-section-title {
+      font-size: 0.62rem !important;
+      margin-bottom: 0.56rem;
+    }
+
+    .wallet-row {
+      padding-left: 0.9rem !important;
+      padding-right: 0.9rem !important;
+      padding-top: 0.46rem !important;
+      padding-bottom: 0.46rem !important;
+    }
+
+    .wallet-name {
+      font-size: 0.98rem !important;
+    }
+
+    .wallet-arrow {
+      height: 36px;
+      width: 36px;
+      border-radius: 10px;
+    }
+
+    .arrow-tile {
+      height: 58px;
+      width: 58px;
+    }
+
+    .buy-content {
+      min-height: 64px !important;
+      padding: 0.58rem 0.74rem !important;
+    }
+
+    .buy-title {
+      font-size: 0.94rem !important;
+    }
+  }
+}
