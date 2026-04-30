@@ -93,77 +93,77 @@ const icons = {
     <svg viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-4 w-4">
       <path d="M12.182 8.635c.017 1.882 1.634 2.513 1.65 2.522-.012.041-.26 0.884-.856 1.76-.515.748-1.053 1.492-1.892 1.508-.825.015-1.09-.485-2.036-.485-.945 0-1.24.47-2.02.5-.811.03-1.428-.809-1.946-1.558-1.058-1.53-1.868-4.32-1.39-6.398.238-1.03.82-1.743 1.486-2.04.59-.264 1.15-.45 1.73-.45.626 0 1.217.432 1.603.432.384 0 1.08-.535 1.84-.458.318.013 1.212.128 1.787.97-.046.03-.896.522-.896 1.56.015 1.258 1.077 1.69 1.1 1.7zM10.15 2.92c.348-.423.584-1.01.52-1.597-.504.02-1.116.335-1.478.758-.324.378-.607.97-.53 1.54.56.044 1.14-.277 1.488-.7z"/>
     </svg>
-  `
+  `,
 };
 const cardanoWallets = [
     { name: "Eternl", icon: icons.eternl },
     { name: "Lace", icon: icons.lace },
-    { name: "Vespr", icon: icons.vespr }
+    { name: "Vespr", icon: icons.vespr },
 ];
 const swapWallets = [
     { name: "Metamask", icon: icons.metamask },
-    { name: "Phantom", icon: icons.phantom }
+    { name: "Phantom", icon: icons.phantom },
 ];
 const app = document.querySelector("#app");
-if (!app) {
+if (!app)
     throw new Error("Missing #app root element.");
-}
 app.innerHTML = `
-  <div class="relative min-h-screen overflow-x-hidden bg-[#0f0201] text-white">
-    <div class="pointer-events-none fixed inset-0 bg-[linear-gradient(90deg,rgba(12,2,2,0.28)_0%,rgba(10,2,1,0.12)_34%,rgba(0,0,0,0)_62%)]"></div>
+  <div class="relative min-h-screen overflow-x-hidden bg-[#030101] text-white">
     <canvas id="gradient-canvas" class="fixed inset-0 h-full w-full"></canvas>
     <canvas id="noise-canvas" class="noise-canvas fixed inset-0 h-full w-full pointer-events-none"></canvas>
     <div class="pointer-events-none absolute inset-0">
-      <span class="absolute inset-y-0 left-[4.5%] w-px bg-[#b96b56]/36"></span>
-      <span class="absolute inset-y-0 left-[52.5%] w-px bg-[#b96b56]/36"></span>
-      <span class="absolute inset-y-0 right-[4.5%] w-px bg-[#b96b56]/36"></span>
-      <span class="absolute left-0 right-0 top-[11%] h-px bg-[#b96b56]/36"></span>
-      <span class="absolute left-0 right-0 bottom-[10.7%] h-px bg-[#b96b56]/36"></span>
-      ${guideDiamond("left-[4.5%] top-[11%]")}
-      ${guideDiamond("left-[52.5%] top-[11%]")}
-      ${guideDiamond("right-[4.5%] top-[11%]")}
-      ${guideDiamond("left-[4.5%] bottom-[10.7%]")}
-      ${guideDiamond("left-[52.5%] bottom-[10.7%]")}
-      ${guideDiamond("right-[4.5%] bottom-[10.7%]")}
+      <div class="relative mx-auto h-full w-full max-w-[1360px]">
+        <span class="absolute inset-y-0 left-5 w-px bg-[#b96b56]/36 sm:left-8 lg:left-[calc(2rem+5.5rem)] xl:left-[calc(2.25rem+10rem)] 2xl:left-[calc(2.25rem+11rem)]"></span>
+        <span class="absolute inset-y-0 left-[52.5%] w-px bg-[#b96b56]/36"></span>
+        <span class="absolute inset-y-0 right-5 w-px bg-[#b96b56]/36 sm:right-8 lg:right-[calc(1.5rem+5.5rem)] xl:right-[calc(1.75rem+10rem)] 2xl:right-[calc(1.75rem+11rem)]"></span>
+        <span class="absolute left-0 right-0 top-[11%] h-px bg-[#b96b56]/36"></span>
+        <span class="absolute left-0 right-0 bottom-[10.7%] h-px bg-[#b96b56]/36"></span>
+        <div class="absolute left-5 top-[11%] sm:left-8 lg:left-[calc(2rem+5.5rem)] xl:left-[calc(2.25rem+10rem)] 2xl:left-[calc(2.25rem+11rem)]">
+          ${guideDiamond("left-0 top-0")}
+        </div>
+        ${guideDiamond("left-[52.5%] top-[11%]")}
+        <div class="absolute right-5 top-[11%] sm:right-8 lg:right-[calc(1.5rem+5.5rem)] xl:right-[calc(1.75rem+10rem)] 2xl:right-[calc(1.75rem+11rem)]">
+          ${guideDiamond("right-0 top-0")}
+        </div>
+        <div class="absolute left-5 bottom-[10.7%] sm:left-8 lg:left-[calc(2rem+5.5rem)] xl:left-[calc(2.25rem+10rem)] 2xl:left-[calc(2.25rem+11rem)]">
+          ${guideDiamond("left-0 top-0")}
+        </div>
+        ${guideDiamond("left-[52.5%] bottom-[10.7%]")}
+        <div class="absolute right-5 bottom-[10.7%] sm:right-8 lg:right-[calc(1.5rem+5.5rem)] xl:right-[calc(1.75rem+10rem)] 2xl:right-[calc(1.75rem+11rem)]">
+          ${guideDiamond("right-0 top-0")}
+        </div>
+      </div>
     </div>
 
     <main class="page-shell relative z-10 mx-auto flex min-h-screen w-full max-w-[1360px] flex-col px-5 pb-8 pt-6 sm:px-8 sm:pt-7 lg:px-8 xl:px-9">
-      <header class="page-header flex items-center gap-3 pl-0.5 text-white/95 sm:gap-3.5 lg:ml-5 xl:ml-6">
+      <header class="page-header flex items-center gap-3 pl-0.5 text-white/95 sm:gap-3.5 lg:ml-38 xl:ml-45 mt-2">
         <div class="nav-brand-shell h-7 w-7 shrink-0 sm:h-8 sm:w-8">${icons.navLogo}</div>
         <span class="text-[20px] font-medium tracking-[-0.055em] text-white/92 hero-type-glow sm:text-[22px]">Ascend</span>
       </header>
 
-      <section class="desktop-stage grid flex-1 grid-cols-1 gap-8 pt-8 sm:gap-10 sm:pt-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(560px,620px)] lg:items-stretch lg:gap-9 xl:grid-cols-[minmax(0,0.92fr)_minmax(600px,660px)] xl:pt-10 2xl:grid-cols-[minmax(0,0.94fr)_minmax(620px,680px)]">
-        <div class="order-1 flex h-full items-center lg:items-end lg:pl-8 xl:pl-12 2xl:pl-14">
-          <div class="hero-copy relative mx-auto w-full max-w-[352px] pb-2 lg:mx-0 lg:max-w-[34rem] lg:pb-8 xl:max-w-[36rem] xl:pb-10 2xl:max-w-[38rem]">
+      <section class="desktop-stage grid flex-1 grid-cols-1 gap-8 pt-8 sm:gap-10 sm:pt-10 lg:grid-cols-[minmax(0,1fr)_minmax(380px,420px)] lg:items-stretch lg:gap-9 xl:grid-cols-[minmax(0,1fr)_minmax(400px,440px)] xl:pt-10 2xl:grid-cols-[minmax(0,1fr)_minmax(420px,460px)]">
+        <div class="order-1 flex h-full items-center lg:items-end lg:pl-8 lg:translate-x-[14%] xl:pl-12 xl:translate-x-[16%] 2xl:pl-14 2xl:translate-x-[18%]">
+          <div class="hero-copy relative mx-auto w-full max-w-[352px] pb-2 pt-4 lg:mx-0 lg:max-w-[34rem] lg:pb-8 lg:pt-6 xl:max-w-[36rem] xl:pb-10 xl:pt-8 2xl:max-w-[38rem]">
             <div class="mb-3 flex justify-center lg:mb-4 lg:justify-start">
               <div class="hero-coin-shell h-16 w-16 sm:h-20 sm:w-20 lg:h-[118px] lg:w-[118px] xl:h-[132px] xl:w-[132px]">
                 <img src="assets/image.png" alt="Ascend Coin" class="hero-coin-image h-full w-full object-contain" />
               </div>
             </div>
             <div class="mb-10 text-center lg:text-left">
-              <div class="hero-badge mb-5 inline-block bg-[#f7663f] px-5 py-2.5 lg:px-6 lg:py-3 xl:px-7 xl:py-3.5">
-                <span class="text-[clamp(2.25rem,4.2vw,3.25rem)] font-semibold uppercase leading-none tracking-[-0.06em] text-white font-sans">$ASCEND</span>
+              <div class="hero-badge mb-5 inline-flex bg-[#f7663f] px-2 py-1">
+                <span class="text-[clamp(3.5rem,6vw,4rem)] font-bold uppercase leading-none tracking-[-0.04em] text-white font-sans">$ASCEND</span>
               </div>
-            <h1 class="hero-title mb-10 text-[clamp(4rem,7.5vw,6.5rem)] font-semibold leading-[1.22] tracking-[-0.06em] text-white hero-type-glow">
-  Liquid<br />
-  Staking
-</h1>
+              <h1 class="hero-title mb-10 text-[clamp(4.5rem,9vw,7.5rem)] font-bold leading-[1.1] tracking-[-0.05em] text-white hero-type-glow">
+                <span class="block">Liquid</span>
+                <span class="block mt-6">Staking</span>
+              </h1>
               <div class="mt-2 flex flex-col items-center gap-6 sm:flex-row sm:items-end sm:justify-between lg:mt-3 lg:items-end lg:gap-8">
-<p class="hero-summary mx-auto max-w-[600px] text-center 
-text-[20px] sm:text-[22px] lg:text-[24px] 
-font-normal leading-[1.4] tracking-[-0.01em] text-white/90 
-sm:text-left">
-                  <span class="lg:block">First crosschain compatible Liquid staking protocol.</span>
-                  <span class="lg:block">Earn 100% of protocol revenue.</span>
+                <p class="hero-summary mb-10 mx-auto max-w-[800px] text-center text-[20.2px] sm:text-[24.24px] lg:text-[28.28px] font-normal leading-[1.3] tracking-[-0.02em] text-white sm:text-left translate-y-[0.5%]">
+                  First crosschain compatible Liquid staking <br/>
+                  protocol. Earn 100% of protocol revenue.
                 </p>
-
                 <div class="relative w-full flex-1 sm:w-auto">
-                  <button
-                    type="button"
-                    class="arrow-tile relative mx-auto flex h-18 w-18 items-center justify-center rounded-lg bg-white text-[#f35233] transition-transform hover:scale-105 active:scale-95 sm:mx-0 sm:h-20 sm:w-20 lg:ml-auto lg:translate-x-[3.5rem] lg:h-[68px] lg:w-[68px] xl:translate-x-[4.5rem] 2xl:translate-x-[5.25rem]"
-                    aria-label="Open staking flow"
-                  >
+                  <button type="button" class="arrow-tile relative mx-auto flex h-18 w-18 items-center justify-center rounded-lg bg-white text-[#f35233] transition-transform hover:scale-105 active:scale-95 sm:mx-0 sm:h-20 sm:w-20 lg:ml-auto lg:h-[68px] lg:w-[68px] lg:-translate-x-[45%] lg:-translate-y-[25%]" aria-label="Open staking flow">
                     <span class="h-9 w-9 sm:h-10 sm:w-10 lg:h-11 lg:w-11">${icons.arrow}</span>
                   </button>
                 </div>
@@ -172,50 +172,60 @@ sm:text-left">
           </div>
         </div>
 
-        <div class="panel-column order-2 w-full lg:ml-auto lg:max-w-[560px] lg:translate-x-10 lg:translate-y-6 xl:max-w-[606px] xl:translate-x-12 xl:translate-y-8 2xl:max-w-[642px] 2xl:translate-x-14 2xl:translate-y-9">
-          <div class="panel-shell relative rounded-[34px] p-2 sm:p-2.5">
-            <div class="absolute inset-x-5 top-[-40px] h-64 rounded-full bg-[radial-gradient(circle,rgba(255,60,20,0.12),rgba(255,60,20,0)_80%)] blur-[60px]"></div>
-            <div class="absolute inset-x-5 bottom-[-45px] h-64 rounded-full bg-[radial-gradient(circle,rgba(243,82,51,0.3),rgba(243,82,51,0)_85%)] blur-[80px]"></div>
-            <div class="panel-card relative rounded-[30px] border border-white/6 bg-[radial-gradient(circle_at_50%_0%,rgba(124,78,63,0.22),rgba(124,78,63,0)_34%),linear-gradient(180deg,rgba(45,29,28,0.98)_0%,rgba(16,9,9,0.985)_42%,rgba(4,1,1,1)_100%)] px-6 pb-2.5 pt-4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] sm:px-8 sm:pb-3 md:px-10 md:pb-3.5">
-              <div class="panel-header mb-3 flex flex-col items-center text-center sm:mb-4">
-                <div class="panel-brand-shell mb-2 h-[38px] w-[38px] shrink-0 sm:h-[42px] sm:w-[42px]">${icons.heroLogo}</div>
-                <h2 class="panel-title text-[clamp(1.75rem,3.8vw,2.3rem)] font-semibold tracking-[-0.05em] text-white hero-type-glow">
-  $Ascend Liquid Staking
-</h2>
-                <p class="panel-subtitle mt-2 text-[13px] tracking-[-0.03em] text-white/42 sm:text-[14px]">
-                  Stake to earn a part of 100% of Ascend protocol revenue
-                </p>
+        <div class="panel-column order-2 w-full lg:ml-auto lg:max-w-[360px] lg:translate-x-[-5.5rem] lg:translate-y-6 xl:max-w-[380px] xl:translate-x-[-10rem] xl:translate-y-8 2xl:max-w-[400px] 2xl:translate-x-[-11rem] 2xl:translate-y-9">
+          <div class="panel-shell relative rounded-[28px] p-1.5 sm:p-2">
+            <span class="absolute inset-y-0 left-0 w-px bg-[#b96b56]/36"></span>
+            <span class="absolute inset-y-0 right-0 w-px bg-[#b96b56]/36"></span>
+            <span class="absolute inset-x-0 top-0 h-px bg-[#b96b56]/36"></span>
+            <span class="absolute inset-x-0 bottom-0 h-px bg-[#b96b56]/36"></span>
+            <div class="panel-card relative rounded-[24px] bg-[radial-gradient(circle_at_50%_0%,rgba(100,20,20,0.35),rgba(40,10,10,0.88)_35%,rgba(15,5,5,0.96)_60%,rgba(8,3,3,1)_100%)] px-4 pb-1 pt-1.5 shadow-[0_24px_48px_rgba(0,0,0,0.5)] sm:px-5 sm:pb-1 md:px-6 md:pb-1.5">
+              <div class="panel-header mb-1 flex flex-col items-center text-center">
+                <div class="panel-brand-shell mb-1 h-[28px] w-[28px] shrink-0 sm:h-[30px] sm:w-[30px]">${icons.heroLogo}</div>
+                <h2 class="panel-title text-[clamp(1.2rem,2.8vw,1.6rem)] font-semibold tracking-[-0.05em] text-white hero-type-glow">$Ascend Liquid Stacking</h2>
+                <p class="panel-subtitle mt-0 text-[9px] tracking-[-0.03em] text-white/42 sm:text-[10px]">Stake to earn a part of 100% of Ascend protocol revenue</p>
               </div>
-
-              <div class="panel-sections space-y-4">
+              <div class="panel-sections space-y-1">
                 ${renderWalletSection("CHOOSE CARDANO WALLET", cardanoWallets)}
                 ${renderWalletSection("OR SWAP TOKENS TO $ASCEND", swapWallets)}
+                <section class="buy-card wallet-block rounded-[18px] bg-[linear-gradient(180deg,#15141A_0%,#0E0D12_100%)] p-0 overflow-hidden">
+                  <div class="flex min-h-[46px] items-stretch">
+                  <div class="buy-thumb hidden w-[65px] shrink-0 sm:block md:w-[75px] relative overflow-hidden 
+  rounded-l-[14px] rounded-tr-[18px] rounded-br-[6px] 
+  bg-[linear-gradient(180deg,#5A5A60_0%,#2A2A2F_40%,#141417_75%,#0B0B0D_100%)]">
 
-                <section class="buy-card wallet-block rounded-[22px] border border-white/5 bg-[#050101] p-0 overflow-hidden">
-                  <div class="flex min-h-[72px] items-stretch">
-                    <div class="buy-thumb hidden w-[110px] shrink-0 sm:block md:w-[124px] bg-[linear-gradient(225deg,#1c0808_0%,#090303_100%)] relative">
-                      <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.05)_0%,rgba(255,255,255,0)_100%)]"></div>
-                      <div class="absolute top-1/2 left-0 right-0 h-4 bg-white/5 blur-sm"></div>
-                    </div>
-                    <div class="buy-content flex min-h-[72px] flex-1 items-center justify-between gap-4 px-6 py-2.5">
+    <div class="absolute inset-0 
+    bg-[linear-gradient(180deg,rgba(255,255,255,0.30)_0%,rgba(255,255,255,0.12)_25%,rgba(255,255,255,0.04)_45%,rgba(255,255,255,0)_65%)]">
+    </div>
+
+    <!-- middle glass strip -->
+    <div class="absolute top-[42%] left-0 right-0 h-[8px] 
+    bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.35),transparent)] 
+    blur-md opacity-60">
+    
+    </div>
+
+  </div>
+                    <div class="buy-content flex min-h-[46px] flex-1 items-center justify-between gap-2 px-3 py-0.5">
                       <div>
-                        <div class="buy-title text-[17px] font-semibold tracking-[-0.04em] text-white hero-type-glow sm:text-[19px]">
-                          Buy $Ascend with card
-                        </div>
-                        <div class="buy-payments mt-2.5 flex items-center gap-3">
-                          <span class="rounded-[4px] bg-white px-1.5 py-0.5 text-[10px] font-black tracking-tighter text-[#253b9a] leading-none">VISA</span>
-                          <div class="flex items-center -space-x-1.5">
-                            <span class="h-3 w-3.5 rounded-full bg-[#eb001b]"></span>
-                            <span class="h-3 w-3.5 rounded-full bg-[#f79e1b] opacity-90"></span>
+                        <div class="buy-title text-[12px] font-semibold tracking-[-0.04em] text-white hero-type-glow sm:text-[13px]">Buy $Ascend with card</div>
+                        <div class="buy-payments mt-0 flex items-center gap-1.5">
+                          <span class="rounded-[3px] bg-white px-1 py-0.5 text-[6.5px] font-black tracking-tighter text-[#253b9a] leading-none">VISA</span>
+                          <div class="flex items-center -space-x-1">
+                            <span class="h-1.5 w-1.5 rounded-full bg-[#eb001b]"></span>
+                            <span class="h-1.5 w-1.5 rounded-full bg-[#f79e1b] opacity-90"></span>
                           </div>
-                          <div class="flex items-center gap-0.5 text-white">
-                            ${icons.apple}
-                            <span class="text-[14px] font-medium tracking-tight">Pay</span>
-                          </div>
+<div class="flex items-center gap-[2px] text-white/90">
+  <span class="flex items-center justify-center h-3 w-3">
+    ${icons.apple}
+  </span>
+  <span class="text-[10px] font-medium leading-none tracking-tight">
+    Pay
+  </span>
+</div>
                         </div>
                       </div>
-                      <button type="button" class="wallet-arrow shrink-0 border border-white/5 bg-white/5" aria-label="Buy with card">
-                        <span class="h-6 w-6">${icons.chevron}</span>
+                      <button type="button" class="wallet-arrow shrink-0 h-5 w-5 bg-white/5" aria-label="Buy with card">
+                        <span class="h-3.5 w-3.5">${icons.chevron}</span>
                       </button>
                     </div>
                   </div>
@@ -229,247 +239,239 @@ sm:text-left">
   </div>
 `;
 function guideDiamond(positionClass) {
-    return `
-    <span class="absolute ${positionClass} h-3 w-3 -translate-x-1/2 -translate-y-1/2 rotate-45 border border-white/80 bg-transparent"></span>
-  `;
+    return `<span class="absolute ${positionClass} h-2 w-2 -translate-x-1/2 -translate-y-1/2 rotate-45 border border-white/80 bg-transparent"></span>`;
 }
 function renderWalletSection(title, wallets) {
     const isSwapSection = title.startsWith("OR ");
     const displayTitle = isSwapSection
-        ? `<span class="text-white/36">OR</span> <span class="text-[#f35233]">${title.slice(3)}</span>`
-        : `<span class="text-[#f35233]">${title}</span>`;
+        ? `<span class="text-white/20 font-normal">OR</span> <span class="text-[#FF5C33] opacity-90 font-medium">${title.slice(3)}</span>`
+        : `<span class="text-[#FF5C33] opacity-90 font-medium">${title}</span>`;
     return `
-    <section class="wallet-block rounded-[24px] border border-white/4 bg-[#1a191f] px-6 py-2.5 sm:px-8">
-      <div class="wallet-section-title mb-3 text-[11px] font-medium uppercase tracking-[0.16em] sm:text-[12px]">${displayTitle}</div>
-      <div class="space-y-2">
-        ${wallets.map(renderWalletRow).join("")}
-      </div>
-    </section>
-  `;
+    <section class="wallet-block rounded-[16px] bg-[#19181D] px-4 py-1 sm:px-5">
+      <div class="wallet-section-title mb-1.5 text-[8px] font-semibold uppercase tracking-[0.14em] sm:text-[9px]">${displayTitle}</div>
+      <div class="space-y-1">${wallets.map(renderWalletRow).join("")}</div>
+    </section>`;
 }
 function renderWalletRow(wallet) {
     return `
-    <button type="button" class="wallet-row flex w-full items-center justify-between gap-3 rounded-[18px] border border-transparent bg-transparent px-5 py-0 text-left text-white transition sm:px-8">
-      <div class="flex min-w-0 items-center gap-4">
-        <div class="h-7 w-7 shrink-0 overflow-hidden rounded-[10px] sm:h-8 sm:w-8">
-          ${wallet.icon}
-        </div>
-        <span class="wallet-name truncate text-[14px] font-medium tracking-[-0.045em] hero-type-glow sm:text-[15px]">${wallet.name}</span>
+    <button type="button" class="wallet-row flex w-full items-center justify-between gap-2 rounded-[12px] bg-transparent px-3 py-1 text-left text-white transition sm:px-4">
+      <div class="flex min-w-0 items-center gap-2.5">
+        <div class="h-5.5 w-5.5 shrink-0 overflow-hidden rounded-[7px] sm:h-6 sm:w-6">${wallet.icon}</div>
+        <span class="wallet-name truncate text-[12px] font-medium tracking-[-0.03em] hero-type-glow sm:text-[13px]">${wallet.name}</span>
       </div>
-
-      <span class="wallet-arrow" aria-hidden="true">
-        <span class="h-6 w-6">${icons.chevron}</span>
-      </span>
-    </button>
-  `;
+      <span class="wallet-arrow shrink-0" aria-hidden="true"><span class="h-4 w-4">${icons.chevron}</span></span>
+    </button>`;
 }
+// ─── CANVAS SETUP ────────────────────────────────────────────────────────────
 const canvas = document.querySelector("#gradient-canvas");
 const noiseCanvas = document.querySelector("#noise-canvas");
-if (!canvas || !noiseCanvas) {
+if (!canvas || !noiseCanvas)
     throw new Error("Missing background canvas element.");
-}
 const context = canvas.getContext("2d");
 const noiseContext = noiseCanvas.getContext("2d");
-if (!context || !noiseContext) {
+if (!context || !noiseContext)
     throw new Error("2D canvas context is not available.");
-}
+// ─── BLOBS ───────────────────────────────────────────────────────────────────
+// Only bottom-right corner gets bright. Everything else stays dark crimson/black.
 const blobs = [
     {
-        x: 0.93,
-        y: 0.9,
-        radius: 0.72,
-        speed: 0.12,
-        alpha: 0.72,
-        color: "#ff4d20",
-        phase: 0.3,
+        x: 1.02,
+        y: 1.02,
+        radius: 0.7,
+        speed: 0.04,
+        alpha: 1.0,
+        color: "#FF1200",
+        phase: 0.8,
         stretchX: 1.35,
-        stretchY: 1.08
+        stretchY: 1.2,
     },
     {
-        x: 0.16,
-        y: 0.92,
-        radius: 0.72,
-        speed: 0.15,
-        alpha: 0.34,
-        color: "#8d1405",
-        phase: 5.8,
-        stretchX: 1.7,
-        stretchY: 1.1
+        x: 0.9,
+        y: 0.9,
+        radius: 0.5,
+        speed: 0.055,
+        alpha: 0.68,
+        color: "#E01000",
+        phase: 1.6,
+        stretchX: 1.3,
+        stretchY: 1.15,
     },
     {
-        x: 0.46,
-        y: 0.42,
+        // very faint mid-field warmth — keeps non-corner from looking too flat
+        x: 0.68,
+        y: 0.72,
         radius: 0.48,
-        speed: 0.14,
-        alpha: 0.26,
-        color: "#ad2009",
-        phase: 2.1,
+        speed: 0.06,
+        alpha: 0.22,
+        color: "#880606",
+        phase: 3.2,
         stretchX: 1.5,
-        stretchY: 1.08
+        stretchY: 1.2,
     },
-    {
-        x: 0.3,
-        y: 0.14,
-        radius: 0.24,
-        speed: 0.1,
-        alpha: 0.08,
-        color: "#ff6a34",
-        phase: 3.4,
-        stretchX: 1.92,
-        stretchY: 0.8
-    }
 ];
 const resizeCanvas = () => {
     const ratio = Math.min(window.devicePixelRatio || 1, 2);
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-    canvas.width = Math.floor(width * ratio);
-    canvas.height = Math.floor(height * ratio);
-    canvas.style.width = `${width}px`;
-    canvas.style.height = `${height}px`;
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    canvas.width = Math.floor(w * ratio);
+    canvas.height = Math.floor(h * ratio);
+    canvas.style.width = `${w}px`;
+    canvas.style.height = `${h}px`;
     context.setTransform(ratio, 0, 0, ratio, 0, 0);
-    noiseCanvas.width = Math.floor(width * (window.devicePixelRatio || 1));
-    noiseCanvas.height = Math.floor(height * (window.devicePixelRatio || 1));
-    noiseCanvas.style.width = `${width}px`;
-    noiseCanvas.style.height = `${height}px`;
+    noiseCanvas.width = Math.floor(w * (window.devicePixelRatio || 1));
+    noiseCanvas.height = Math.floor(h * (window.devicePixelRatio || 1));
+    noiseCanvas.style.width = `${w}px`;
+    noiseCanvas.style.height = `${h}px`;
     renderNoise();
 };
 const renderNoise = () => {
-    const width = noiseCanvas.width;
-    const height = noiseCanvas.height;
-    const imageData = noiseContext.createImageData(width, height);
+    const w = noiseCanvas.width;
+    const h = noiseCanvas.height;
+    const imageData = noiseContext.createImageData(w, h);
     const data = imageData.data;
-    for (let y = 0; y < height; y += 1) {
-        for (let x = 0; x < width; x += 1) {
-            const index = (y * width + x) * 4;
-            const nx = x / width;
-            const ny = y / height;
-            const hotzone = radialInfluence(nx, ny, 0.84, 0.82, 0.9);
-            const midzone = radialInfluence(nx, ny, 0.48, 0.46, 0.7);
-            const leftField = radialInfluence(nx, ny, 0.24, 0.52, 0.92);
-            const ambientField = radialInfluence(nx, ny, 0.56, 0.5, 1.12);
-            const topShadow = radialInfluence(nx, ny, 0.18, 0.12, 0.48);
-            // FIX: leftField and ambientField weights reduced (0.16→0.08, 0.14→0.07)
-            // to stop the centre-left band lifting too bright
-            const brightness = hotzone * 0.56 + midzone * 0.24 + leftField * 0.08 + ambientField * 0.07 - topShadow * 0.06;
-            const sample = Math.random();
-            let red = 0, green = 0, blue = 0, alpha = 0;
-            if (sample < 0.3) {
-                red = 16 + Math.max(0, brightness) * 30 + Math.random() * 18;
-                green = 1 + Math.max(0, brightness) * 6 + Math.random() * 3;
-                blue = 0;
-                // FIX: alpha ceiling reduced from 207 → 160 to cut left-half over-brightness
-                alpha = 140 + Math.max(0, brightness) * 20 + Math.random() * 30;
+    for (let y = 0; y < h; y++) {
+        for (let x = 0; x < w; x++) {
+            const idx = (y * w + x) * 4;
+            const nx = x / w;
+            const ny = y / h;
+            // Bright hot zone: only bottom-right corner
+            const corner = radialInfluence(nx, ny, 1.0, 1.0, 0.8);
+            // Very faint mid-warmth for the textured dark-red feel everywhere else
+            const midWarm = radialInfluence(nx, ny, 0.65, 0.7, 0.72) * 0.22;
+            // Ambient: barely anything, keeps top-left near black
+            const ambient = radialInfluence(nx, ny, 0.5, 0.5, 1.2) * 0.06;
+            const brightness = corner * 1.4 + midWarm * 0.6 + ambient;
+            const s = Math.random();
+            let r = 0, g = 0, b = 0, a = 0;
+            if (s < 0.5) {
+                // Near-black base grain
+                r = 3 + brightness * 36 + Math.random() * 12;
+                g = 0 + brightness * 2 + Math.random() * 2;
+                b = 0 + brightness * 2 + Math.random() * 2;
+                a = 155 + brightness * 48 + Math.random() * 28;
             }
-            else if (sample < 0.84) {
-                red = 62 + Math.max(0, brightness) * 94 + Math.random() * 18;
-                green = 6 + Math.max(0, brightness) * 18 + Math.random() * 5;
-                blue = Math.random() * 3;
-                // FIX: alpha ceiling reduced from 168 → 130
-                alpha = 110 + Math.max(0, brightness) * 30 + Math.random() * 20;
+            else if (s < 0.91) {
+                // Mid red grain (dark crimson everywhere, bright red in corner)
+                r = 120 + brightness * 135 + Math.random() * 50;
+                g = 10 + brightness * 45 + Math.random() * 18;
+                b = 0 + brightness * 8 + Math.random() * 6;
+                a = 100 + brightness * 82 + Math.random() * 26;
             }
             else {
-                red = 188 + Math.max(0, brightness) * 54 + Math.random() * 14;
-                green = 14 + Math.max(0, brightness) * 24 + Math.random() * 6;
-                blue = 2 + Math.random() * 4;
-                // FIX: alpha ceiling reduced from 190 → 148
-                alpha = 128 + Math.max(0, brightness) * 36 + Math.random() * 20;
+                // Bright specks — only pop in corner hot zone
+                r = 170 + brightness * 82 + Math.random() * 22;
+                g = 7 + brightness * 14 + Math.random() * 7;
+                b = 4 + brightness * 9 + Math.random() * 5;
+                a = 115 + brightness * 95 + Math.random() * 26;
             }
-            data[index] = Math.min(255, red);
-            data[index + 1] = Math.min(255, green);
-            data[index + 2] = Math.min(255, blue);
-            data[index + 3] = Math.min(255, alpha);
+            data[idx] = Math.min(255, r);
+            data[idx + 1] = Math.min(255, g);
+            data[idx + 2] = Math.min(255, b);
+            data[idx + 3] = Math.min(255, a);
         }
     }
     noiseContext.putImageData(imageData, 0, 0);
 };
-const radialInfluence = (x, y, centerX, centerY, radius) => {
-    const distance = Math.hypot(x - centerX, y - centerY);
-    return Math.max(0, 1 - distance / radius);
-};
+const radialInfluence = (x, y, cx, cy, r) => Math.max(0, 1 - Math.hypot(x - cx, y - cy) / r);
+// ─── DRAW LOOP ───────────────────────────────────────────────────────────────
 const drawBackground = (time) => {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-    const seconds = time * 0.001;
-    context.clearRect(0, 0, width, height);
-    const base = context.createLinearGradient(0, 0, width, height);
-    base.addColorStop(0, "#090101");
-    base.addColorStop(0.22, "#140201");
-    base.addColorStop(0.54, "#240402");
-    base.addColorStop(0.82, "#3a0704");
-    base.addColorStop(1, "#561004");
-    context.fillStyle = base;
-    context.fillRect(0, 0, width, height);
-    const fieldGlow = context.createRadialGradient(width * 0.44, height * 0.48, 0, width * 0.46, height * 0.5, Math.max(width, height) * 0.76);
-    fieldGlow.addColorStop(0, "rgba(162, 34, 12, 0.14)");
-    fieldGlow.addColorStop(0.56, "rgba(98, 12, 5, 0.09)");
-    fieldGlow.addColorStop(1, "rgba(0, 0, 0, 0)");
-    context.fillStyle = fieldGlow;
-    context.fillRect(0, 0, width, height);
-    const leftRedField = context.createRadialGradient(width * 0.2, height * 0.56, 0, width * 0.18, height * 0.58, Math.max(width, height) * 0.68);
-    leftRedField.addColorStop(0, "rgba(86, 16, 6, 0.1)");
-    leftRedField.addColorStop(0.7, "rgba(28, 4, 1, 0.05)");
-    leftRedField.addColorStop(1, "rgba(0, 0, 0, 0)");
-    context.fillStyle = leftRedField;
-    context.fillRect(0, 0, width, height);
-    const upperWarmth = context.createRadialGradient(width * 0.72, height * 0.16, 0, width * 0.7, height * 0.14, Math.max(width, height) * 0.54);
-    upperWarmth.addColorStop(0, "rgba(150, 34, 14, 0.11)");
-    upperWarmth.addColorStop(0.62, "rgba(86, 16, 6, 0.06)");
-    upperWarmth.addColorStop(1, "rgba(0, 0, 0, 0)");
-    context.fillStyle = upperWarmth;
-    context.fillRect(0, 0, width, height);
-    const bottomGlow = context.createRadialGradient(width * 1.03, height * 1.02, 0, width * 0.9, height * 0.88, height * 0.92);
-    bottomGlow.addColorStop(0, "rgba(255, 74, 24, 0.82)");
-    bottomGlow.addColorStop(0.34, "rgba(255, 34, 10, 0.38)");
-    bottomGlow.addColorStop(1, "rgba(0, 0, 0, 0)");
-    context.fillStyle = bottomGlow;
-    context.fillRect(0, 0, width, height);
-    const cornerGlow = context.createRadialGradient(width, height, 0, width, height, width * 0.84);
-    cornerGlow.addColorStop(0, "rgba(255, 98, 28, 0.58)");
-    cornerGlow.addColorStop(0.52, "rgba(255, 50, 14, 0.18)");
-    cornerGlow.addColorStop(1, "rgba(0, 0, 0, 0)");
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    const t = time * 0.001;
+    context.clearRect(0, 0, w, h);
+    // 1. Pure near-black base
+    context.fillStyle = "#010000";
+    context.fillRect(0, 0, w, h);
+    // 2. Dark crimson mid-field — gives the textured dark-red feel to the whole
+    //    background without making it bright. This is the "everywhere is dark red" layer.
+    const midField = context.createRadialGradient(w * 0.5, h * 0.58, 0, w * 0.5, h * 0.5, Math.max(w, h) * 1.15);
+    midField.addColorStop(0, "rgba(65, 5, 2, 0.58)");
+    midField.addColorStop(0.4, "rgba(44, 3, 1, 0.32)");
+    midField.addColorStop(0.7, "rgba(22, 1, 0, 0.14)");
+    midField.addColorStop(1, "rgba(0,  0, 0, 0)");
+    context.fillStyle = midField;
+    context.fillRect(0, 0, w, h);
+    // 3. MAIN GLOW — tight bright-red in bottom-right corner ONLY
+    const cornerGlow = context.createRadialGradient(w * 1.0, h * 1.0, 0, w * 0.84, h * 0.84, Math.max(w, h) * 0.6);
+    cornerGlow.addColorStop(0, "rgba(255, 80, 20, 1.0)");
+    cornerGlow.addColorStop(0.1, "rgba(255, 60, 10, 0.95)");
+    cornerGlow.addColorStop(0.08, "rgba(255, 30, 8, 0.95)");
+    cornerGlow.addColorStop(0.1, "rgba(245, 10, 0, 0.90)");
+    cornerGlow.addColorStop(0.25, "rgba(205,  7, 0, 0.60)");
+    cornerGlow.addColorStop(0.45, "rgba(135,  4, 0, 0.28)");
+    cornerGlow.addColorStop(0.65, "rgba( 65,  2, 0, 0.10)");
+    cornerGlow.addColorStop(1, "rgba(  0,  0, 0, 0)");
     context.fillStyle = cornerGlow;
-    context.fillRect(0, 0, width, height);
+    context.fillRect(0, 0, w, h);
+    // 3.5 EXTRA BRIGHT GLOW — bottom-right corner
+    const extraGlow = context.createRadialGradient(w * 1.05, h * 1.05, 0, w * 0.92, h * 0.92, Math.max(w, h) * 0.35);
+    extraGlow.addColorStop(0, "rgba(255, 220, 140, 0.95)");
+    extraGlow.addColorStop(0.2, "rgba(255, 120, 50, 0.42)");
+    extraGlow.addColorStop(0.4, "rgba(255, 60, 20, 0.22)");
+    extraGlow.addColorStop(0.65, "rgba(255, 20, 5, 0.08)");
+    extraGlow.addColorStop(1, "rgba(  0,  0, 0, 0)");
+    context.fillStyle = extraGlow;
+    context.fillRect(0, 0, w, h);
+    // 4. Animated blobs — screen blend, corner only
     context.save();
     context.globalCompositeOperation = "screen";
-    context.filter = "blur(146px)";
+    context.filter = "blur(125px)";
     blobs.forEach((blob) => {
-        const offsetX = Math.sin(seconds * blob.speed + blob.phase) * width * 0.045;
-        const offsetY = Math.cos(seconds * (blob.speed + 0.03) + blob.phase) * height * 0.052;
-        const centerX = blob.x * width + offsetX;
-        const centerY = blob.y * height + offsetY;
-        const radius = blob.radius * Math.max(width, height);
+        const ox = Math.sin(t * blob.speed + blob.phase) * w * 0.025;
+        const oy = Math.cos(t * (blob.speed + 0.03) + blob.phase) * h * 0.028;
+        const cx = blob.x * w + ox;
+        const cy = blob.y * h + oy;
+        const radius = blob.radius * Math.max(w, h);
         context.save();
-        context.translate(centerX, centerY);
+        context.translate(cx, cy);
         context.scale(blob.stretchX, blob.stretchY);
-        const glow = context.createRadialGradient(0, 0, radius * 0.04, 0, 0, radius);
-        glow.addColorStop(0, withAlpha(blob.color, blob.alpha));
-        glow.addColorStop(0.4, withAlpha(blob.color, blob.alpha * 0.7));
-        glow.addColorStop(1, withAlpha(blob.color, 0));
-        context.fillStyle = glow;
+        const g = context.createRadialGradient(0, 0, radius * 0.04, 0, 0, radius);
+        g.addColorStop(0, withAlpha(blob.color, blob.alpha));
+        g.addColorStop(0.4, withAlpha(blob.color, blob.alpha * 0.55));
+        g.addColorStop(1, withAlpha(blob.color, 0));
+        context.fillStyle = g;
         context.beginPath();
         context.arc(0, 0, radius, 0, Math.PI * 2);
         context.fill();
         context.restore();
     });
     context.restore();
-    const vignette = context.createRadialGradient(width * 0.64, height * 0.74, 0, width * 0.52, height * 0.56, Math.max(width, height) * 0.94);
-    vignette.addColorStop(0, "rgba(0,0,0,0)");
-    vignette.addColorStop(1, "rgba(0,0,0,0.5)");
+    // 5. TOP EDGE BLACKOUT — header area stays very dark
+    const topBlackout = context.createLinearGradient(0, 0, 0, h * 0.32);
+    topBlackout.addColorStop(0, "rgba(0, 0, 0, 0.88)");
+    topBlackout.addColorStop(0.55, "rgba(0, 0, 0, 0.45)");
+    topBlackout.addColorStop(1, "rgba(0, 0, 0, 0)");
+    context.fillStyle = topBlackout;
+    context.fillRect(0, 0, w, h);
+    // 6. LEFT SIDE BLACKOUT — hero text column stays dark
+    const leftBlackout = context.createLinearGradient(0, 0, w * 0.52, 0);
+    leftBlackout.addColorStop(0, "rgba(0, 0, 0, 0.82)");
+    leftBlackout.addColorStop(0.45, "rgba(0, 0, 0, 0.40)");
+    leftBlackout.addColorStop(1, "rgba(0, 0, 0, 0)");
+    context.fillStyle = leftBlackout;
+    context.fillRect(0, 0, w, h);
+    // 7. TOP-RIGHT corner blackout — keeps the area above the card dark
+    const topRightBlackout = context.createRadialGradient(w * 1.0, 0, 0, w * 0.85, h * 0.08, Math.max(w, h) * 0.55);
+    topRightBlackout.addColorStop(0, "rgba(0, 0, 0, 0.35)");
+    topRightBlackout.addColorStop(0.5, "rgba(0, 0, 0, 0.15)");
+    topRightBlackout.addColorStop(1, "rgba(0, 0, 0, 0)");
+    context.fillStyle = topRightBlackout;
+    context.fillRect(0, 0, w, h);
+    // 8. Global vignette — darkens all edges, centre open
+    const vignette = context.createRadialGradient(w * 0.6, h * 0.62, 0, w * 0.5, h * 0.5, Math.max(w, h) * 0.88);
+    vignette.addColorStop(0, "rgba(0, 0, 0, 0)");
+    vignette.addColorStop(0.4, "rgba(0, 0, 0, 0.15)");
+    vignette.addColorStop(1, "rgba(0, 0, 0, 0.85)");
     context.fillStyle = vignette;
-    context.fillRect(0, 0, width, height);
+    context.fillRect(0, 0, w, h);
     window.requestAnimationFrame(drawBackground);
 };
 function withAlpha(hex, alpha) {
-    const safeAlpha = Math.max(0, Math.min(alpha, 1));
-    const normalized = hex.replace("#", "");
-    if (normalized.length !== 6) {
-        return `rgba(255, 255, 255, ${safeAlpha})`;
-    }
-    const red = Number.parseInt(normalized.slice(0, 2), 16);
-    const green = Number.parseInt(normalized.slice(2, 4), 16);
-    const blue = Number.parseInt(normalized.slice(4, 6), 16);
-    return `rgba(${red}, ${green}, ${blue}, ${safeAlpha})`;
+    const a = Math.max(0, Math.min(alpha, 1));
+    const n = hex.replace("#", "");
+    if (n.length !== 6)
+        return `rgba(255,255,255,${a})`;
+    return `rgba(${parseInt(n.slice(0, 2), 16)},${parseInt(n.slice(2, 4), 16)},${parseInt(n.slice(4, 6), 16)},${a})`;
 }
 resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
