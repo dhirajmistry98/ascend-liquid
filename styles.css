@@ -1,6 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap");
 @import "tailwindcss";
 @source "./index.html";
 @source "./src/main.ts";
+
+@font-face {
+  font-family: "Delight";
+  src:
+    local("Delight Regular"),
+    local("Delight");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Delight";
+  src:
+    local("Delight Semibold"),
+    local("Delight SemiBold"),
+    local("Delight-Semibold"),
+    local("Delight-SemiBold"),
+    local("Delight");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
 
 @layer base {
   html {
@@ -14,7 +38,8 @@
     background: #030101;
     color: #fff7f1;
     font-family:
-      "Avenir Next", "Inter", "SF Pro Display", "Segoe UI", sans-serif;
+      "Delight", "Avenir Next", "Inter", "SF Pro Display", "Segoe UI",
+      sans-serif;
   }
 
   button,
@@ -39,6 +64,36 @@
     text-shadow:
       0 1px 0 rgba(255, 255, 255, 0.04),
       0 12px 36px rgba(0, 0, 0, 0.35);
+  }
+
+  .hero-display {
+    font-family:
+      "Delight", "Avenir Next", "Inter", "SF Pro Display", "Segoe UI",
+      sans-serif;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .hero-summary {
+    font-family:
+      "Delight", "Avenir Next", "Inter", "SF Pro Display", "Segoe UI",
+      sans-serif;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  .hero-badge {
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    padding: 0.56rem 1.5rem 0.48rem;
+  }
+
+  .hero-badge-label {
+    display: block;
+    line-height: 0.9;
+    transform: none;
+    white-space: nowrap;
   }
 
   .nav-brand-shell {
@@ -72,8 +127,41 @@
       rgba(8, 3, 3, 0.97);
   }
 
+  .panel-shell::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(185, 107, 86, 0.36);
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  .panel-title {
+    width: fit-content;
+    margin-inline: auto;
+    max-width: none;
+    white-space: nowrap;
+    text-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.03),
+      0 8px 18px rgba(0, 0, 0, 0.2);
+  }
+
+  .panel-subtitle {
+    width: fit-content;
+    max-width: none;
+    margin-inline: auto;
+    margin-top: 0.42rem;
+    line-height: 1.18;
+    white-space: nowrap;
+    color: #838589 !important;
+  }
+
   .wallet-block {
     background: #19181d;
+  }
+
+  .wallet-section-title {
+    font-family: "DM Mono", "IBM Plex Mono", "SFMono-Regular", monospace;
   }
 
   .wallet-row {
@@ -96,17 +184,13 @@
   }
 
   .arrow-tile {
-    height: 58px;
-    width: 58px;
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.98),
-      rgba(245, 245, 245, 0.94)
-    );
-    box-shadow:
-      0 16px 30px rgba(0, 0, 0, 0.24),
-      inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    display: inline-flex;
+    height: 65.05px;
+    width: 65.05px;
+    border: 0.78px solid rgba(243, 82, 51, 0.22);
+    border-radius: 0 !important;
+    background: #f4f4f4;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
   }
 
   .hero-coin-shell {
@@ -192,12 +276,12 @@
     }
 
     .arrow-tile {
-      height: 68px;
-      width: 68px;
+      height: 65.05px;
+      width: 65.05px;
     }
 
     .panel-column {
-      max-width: 38.25rem !important;
+      max-width: 39rem !important;
     }
 
     .panel-shell {
@@ -206,28 +290,27 @@
     }
 
     .panel-card {
-      padding: 0.86rem 0.8rem 0.7rem !important;
+      padding: 0.94rem 0.8rem 0.82rem !important;
       border-radius: 27px;
     }
 
     .panel-header {
-      margin-bottom: 0.72rem;
+      margin-bottom: 1rem;
     }
 
     .panel-brand-shell {
       height: 44px;
       width: 44px;
-      margin-bottom: 0.66rem;
+      margin-bottom: 0.82rem;
     }
 
     .panel-title {
-      font-size: 1.64rem;
-      line-height: 1.06;
+      font-size: 1.36rem;
+      line-height: 1.04;
     }
 
     .panel-subtitle {
-      font-size: 0.8rem !important;
-      max-width: 31ch;
+      font-size: 0.74rem !important;
     }
 
     .panel-sections {
@@ -236,19 +319,19 @@
 
     .wallet-block {
       border-radius: 22px;
-      padding: 0.7rem 0.78rem !important;
+      padding: 0.78rem 0.78rem !important;
     }
 
     .wallet-section-title {
-      margin-bottom: 0.62rem;
+      margin-bottom: 0.64rem;
       font-size: 0.68rem !important;
       letter-spacing: 0.125em;
     }
 
     .wallet-row {
       border-radius: 17px;
-      padding-top: 0.5rem !important;
-      padding-bottom: 0.5rem !important;
+      padding-top: 0.56rem !important;
+      padding-bottom: 0.56rem !important;
     }
 
     .wallet-name {
@@ -267,8 +350,8 @@
     }
 
     .buy-content {
-      min-height: 68px !important;
-      padding: 0.56rem 0.86rem !important;
+      min-height: 72px !important;
+      padding: 0.64rem 0.86rem !important;
     }
 
     .buy-thumb {
@@ -321,7 +404,7 @@
     }
 
     .panel-column {
-      max-width: 42rem;
+      max-width: 42.84rem;
       margin-inline: auto;
     }
 
@@ -336,38 +419,41 @@
     }
 
     .panel-card {
-      padding: 1rem 0.95rem 0.95rem !important;
+      padding: 1.04rem 0.95rem 1rem !important;
       border-radius: 24px;
     }
 
     .panel-header {
-      margin-bottom: 0.85rem;
+      margin-bottom: 1.06rem;
+    }
+
+    .panel-brand-shell {
+      margin-bottom: 0.76rem;
     }
 
     .panel-title {
-      font-size: clamp(1.55rem, 4.8vw, 2.15rem);
+      font-size: clamp(1.28rem, 3.55vw, 1.82rem);
+      line-height: 1.05;
     }
 
     .panel-subtitle {
-      font-size: 0.9rem !important;
-      max-width: 27ch;
-      margin-inline: auto;
+      font-size: 0.82rem !important;
     }
 
     .wallet-block {
-      padding: 0.82rem !important;
+      padding: 0.86rem !important;
       border-radius: 20px;
     }
 
     .wallet-row {
-      padding-top: 0.65rem !important;
-      padding-bottom: 0.65rem !important;
+      padding-top: 0.68rem !important;
+      padding-bottom: 0.68rem !important;
       border-radius: 16px;
     }
 
     .buy-content {
-      min-height: 72px !important;
-      padding: 0.72rem 0.9rem !important;
+      min-height: 76px !important;
+      padding: 0.76rem 0.9rem !important;
     }
 
     .buy-thumb {
@@ -394,6 +480,7 @@
 
     .hero-badge {
       margin-bottom: 0.9rem;
+      padding: 0.5rem 1.34rem 0.44rem;
     }
 
     .hero-title {
@@ -408,8 +495,8 @@
     }
 
     .arrow-tile {
-      height: 62px;
-      width: 62px;
+      height: 65.05px;
+      width: 65.05px;
     }
 
     .hero-coin-shell {
@@ -418,7 +505,7 @@
     }
 
     .panel-column {
-      max-width: 36rem !important;
+      max-width: 36.72rem !important;
     }
 
     .panel-shell {
@@ -433,27 +520,26 @@
 
     .panel-card {
       border-radius: 24px;
-      padding: 0.72rem 0.76rem 0.72rem !important;
+      padding: 0.78rem 0.76rem 0.76rem !important;
     }
 
     .panel-header {
-      margin-bottom: 0.62rem;
+      margin-bottom: 0.82rem;
     }
 
     .panel-brand-shell {
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.7rem;
       height: 40px;
       width: 40px;
     }
 
     .panel-title {
-      font-size: clamp(1.46rem, 2vw, 1.82rem);
+      font-size: clamp(1.22rem, 1.68vw, 1.5rem);
       line-height: 1.04;
     }
 
     .panel-subtitle {
-      font-size: 0.72rem !important;
-      max-width: 28ch;
+      font-size: 0.68rem !important;
     }
 
     .panel-sections {
@@ -462,19 +548,19 @@
 
     .wallet-block {
       border-radius: 20px;
-      padding: 0.58rem 0.72rem !important;
+      padding: 0.66rem 0.72rem !important;
     }
 
     .wallet-section-title {
-      margin-bottom: 0.55rem;
+      margin-bottom: 0.58rem;
       font-size: 0.6rem !important;
       letter-spacing: 0.14em;
     }
 
     .wallet-row {
       border-radius: 15px;
-      padding-top: 0.4rem !important;
-      padding-bottom: 0.4rem !important;
+      padding-top: 0.46rem !important;
+      padding-bottom: 0.46rem !important;
     }
 
     .wallet-name {
@@ -492,8 +578,8 @@
     }
 
     .buy-content {
-      min-height: 58px !important;
-      padding: 0.48rem 0.64rem !important;
+      min-height: 61px !important;
+      padding: 0.54rem 0.64rem !important;
     }
 
     .buy-thumb {
@@ -546,6 +632,10 @@
       width: 68px;
     }
 
+    .hero-badge {
+      padding: 0.4rem 0.92rem 0.35rem;
+    }
+
     .panel-column {
       max-width: 100%;
     }
@@ -562,39 +652,43 @@
 
     .panel-card {
       border-radius: 21px;
-      padding: 0.82rem 0.78rem 0.78rem !important;
+      padding: 0.88rem 0.78rem 0.82rem !important;
     }
 
     .panel-brand-shell {
       height: 36px;
       width: 36px;
-      margin-bottom: 0.55rem;
+      margin-bottom: 0.64rem;
+    }
+
+    .panel-header {
+      margin-bottom: 0.92rem;
     }
 
     .panel-title {
-      font-size: clamp(1.42rem, 6.8vw, 1.82rem);
+      font-size: clamp(1.14rem, 5.15vw, 1.46rem);
+      line-height: 1.05;
     }
 
     .panel-subtitle {
-      font-size: 0.76rem !important;
-      max-width: 28ch;
+      font-size: 0.68rem !important;
     }
 
     .wallet-block {
       border-radius: 18px;
-      padding: 0.7rem !important;
+      padding: 0.74rem !important;
     }
 
     .wallet-section-title {
       font-size: 0.62rem !important;
-      margin-bottom: 0.56rem;
+      margin-bottom: 0.6rem;
     }
 
     .wallet-row {
       padding-left: 0.9rem !important;
       padding-right: 0.9rem !important;
-      padding-top: 0.46rem !important;
-      padding-bottom: 0.46rem !important;
+      padding-top: 0.54rem !important;
+      padding-bottom: 0.54rem !important;
     }
 
     .wallet-name {
@@ -608,13 +702,13 @@
     }
 
     .arrow-tile {
-      height: 58px;
-      width: 58px;
+      height: 65.05px;
+      width: 65.05px;
     }
 
     .buy-content {
-      min-height: 64px !important;
-      padding: 0.58rem 0.74rem !important;
+      min-height: 67px !important;
+      padding: 0.62rem 0.74rem !important;
     }
 
     .buy-title {

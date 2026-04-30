@@ -28,12 +28,12 @@ const icons = {
       <path d="M39.3125 40.7598H36.252L31.9082 29.3018L31.2578 27.5986C25.4431 26.6699 21.1536 29.4247 19.2139 31.4248L19.0439 31.8662L15.6523 40.7598H12.6328L24.1729 11.1836H27.7725L39.3125 40.7598ZM20.6768 27.6133C23.0969 26.1481 26.4121 25.0072 30.4043 25.3643L25.9521 13.707L20.6768 27.6133Z" fill="white"/>
     </svg>
   `,
-  arrow: `
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M7 17L17 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      <path d="M9 7H17V15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  `,
+arrow: `
+<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path d="M5.4 18.6L18 6" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/>
+  <path d="M7.8 6H18V16.2" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`,
   chevron: `
     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -134,21 +134,21 @@ app.innerHTML = `
       <div class="relative mx-auto h-full w-full max-w-[1360px]">
         <span class="absolute inset-y-0 left-5 w-px bg-[#b96b56]/36 sm:left-8 lg:left-[calc(2rem+5.5rem)] xl:left-[calc(2.25rem+10rem)] 2xl:left-[calc(2.25rem+11rem)]"></span>
         <span class="absolute inset-y-0 left-[52.5%] w-px bg-[#b96b56]/36"></span>
-        <span class="absolute inset-y-0 right-5 w-px bg-[#b96b56]/36 sm:right-8 lg:right-[calc(1.5rem+5.5rem)] xl:right-[calc(1.75rem+10rem)] 2xl:right-[calc(1.75rem+11rem)]"></span>
-        <span class="absolute left-0 right-0 top-[11%] h-px bg-[#b96b56]/36"></span>
-        <span class="absolute left-0 right-0 bottom-[10.7%] h-px bg-[#b96b56]/36"></span>
-        <div class="absolute left-5 top-[11%] sm:left-8 lg:left-[calc(2rem+5.5rem)] xl:left-[calc(2.25rem+10rem)] 2xl:left-[calc(2.25rem+11rem)]">
+        <span class="absolute inset-y-0 right-5 w-px bg-[#b96b56]/36 sm:right-8 lg:right-[calc(2rem+5.5rem)] xl:right-[calc(2.25rem+10rem)] 2xl:right-[calc(2.25rem+11rem)]"></span>
+        <span class="absolute left-0 right-0 top-[11%] h-px bg-[#b96b56]/36 lg:top-[12.15%] xl:top-[12%] 2xl:top-[11.85%]"></span>
+        <span class="absolute left-0 right-0 bottom-[10.7%] h-px bg-[#b96b56]/36 lg:bottom-[12.15%] xl:bottom-[12%] 2xl:bottom-[11.85%]"></span>
+        <div class="absolute left-5 top-[11%] sm:left-8 lg:left-[calc(2rem+5.5rem)] lg:top-[12.15%] xl:left-[calc(2.25rem+10rem)] xl:top-[12%] 2xl:left-[calc(2.25rem+11rem)] 2xl:top-[11.85%]">
           ${guideDiamond("left-0 top-0")}
         </div>
-        ${guideDiamond("left-[52.5%] top-[11%]")}
-        <div class="absolute right-5 top-[11%] sm:right-8 lg:right-[calc(1.5rem+5.5rem)] xl:right-[calc(1.75rem+10rem)] 2xl:right-[calc(1.75rem+11rem)]">
+        ${guideDiamond("left-[52.5%] top-[11%] lg:top-[12.15%] xl:top-[12%] 2xl:top-[11.85%]")}
+        <div class="absolute right-5 top-[11%] sm:right-8 lg:right-[calc(2rem+5.5rem)] lg:top-[12.15%] xl:right-[calc(2.25rem+10rem)] xl:top-[12%] 2xl:right-[calc(2.25rem+11rem)] 2xl:top-[11.85%]">
           ${guideDiamond("right-0 top-0")}
         </div>
-        <div class="absolute left-5 bottom-[10.7%] sm:left-8 lg:left-[calc(2rem+5.5rem)] xl:left-[calc(2.25rem+10rem)] 2xl:left-[calc(2.25rem+11rem)]">
+        <div class="absolute left-5 bottom-[10.7%] sm:left-8 lg:left-[calc(2rem+5.5rem)] lg:bottom-[12.15%] xl:left-[calc(2.25rem+10rem)] xl:bottom-[12%] 2xl:left-[calc(2.25rem+11rem)] 2xl:bottom-[11.85%]">
           ${guideDiamond("left-0 top-0")}
         </div>
-        ${guideDiamond("left-[52.5%] bottom-[10.7%]")}
-        <div class="absolute right-5 bottom-[10.7%] sm:right-8 lg:right-[calc(1.5rem+5.5rem)] xl:right-[calc(1.75rem+10rem)] 2xl:right-[calc(1.75rem+11rem)]">
+        ${guideDiamond("left-[52.5%] bottom-[10.7%] lg:bottom-[12.15%] xl:bottom-[12%] 2xl:bottom-[11.85%]")}
+        <div class="absolute right-5 bottom-[10.7%] sm:right-8 lg:right-[calc(2rem+5.5rem)] lg:bottom-[12.15%] xl:right-[calc(2.25rem+10rem)] xl:bottom-[12%] 2xl:right-[calc(2.25rem+11rem)] 2xl:bottom-[11.85%]">
           ${guideDiamond("right-0 top-0")}
         </div>
       </div>
@@ -160,7 +160,7 @@ app.innerHTML = `
         <span class="text-[20px] font-medium tracking-[-0.055em] text-white/92 hero-type-glow sm:text-[22px]">Ascend</span>
       </header>
 
-      <section class="desktop-stage grid flex-1 grid-cols-1 gap-8 pt-8 sm:gap-10 sm:pt-10 lg:grid-cols-[minmax(0,1fr)_minmax(380px,420px)] lg:items-stretch lg:gap-9 xl:grid-cols-[minmax(0,1fr)_minmax(400px,440px)] xl:pt-10 2xl:grid-cols-[minmax(0,1fr)_minmax(420px,460px)]">
+      <section class="desktop-stage grid flex-1 grid-cols-1 gap-8 pt-8 sm:gap-10 sm:pt-10 lg:grid-cols-[minmax(0,1fr)_minmax(388px,428px)] lg:items-stretch lg:gap-9 xl:grid-cols-[minmax(0,1fr)_minmax(408px,449px)] xl:pt-10 2xl:grid-cols-[minmax(0,1fr)_minmax(428px,469px)]">
         <div class="order-1 flex h-full items-center lg:items-end lg:pl-8 lg:translate-x-[14%] xl:pl-12 xl:translate-x-[16%] 2xl:pl-14 2xl:translate-x-[18%]">
           <div class="hero-copy relative mx-auto w-full max-w-[352px] pb-2 pt-4 lg:mx-0 lg:max-w-[34rem] lg:pb-8 lg:pt-6 xl:max-w-[36rem] xl:pb-10 xl:pt-8 2xl:max-w-[38rem]">
             <div class="mb-3 flex justify-center lg:mb-4 lg:justify-start">
@@ -169,10 +169,12 @@ app.innerHTML = `
               </div>
             </div>
             <div class="mb-10 text-center lg:text-left">
-              <div class="hero-badge mb-5 inline-flex bg-[#f7663f] px-2 py-1">
-                <span class="text-[clamp(3.5rem,6vw,4rem)] font-bold uppercase leading-none tracking-[-0.04em] text-white font-sans">$ASCEND</span>
-              </div>
-              <h1 class="hero-title mb-10 text-[clamp(4.5rem,9vw,7.5rem)] font-bold leading-[1.1] tracking-[-0.05em] text-white hero-type-glow">
+             <div class="mb-5 inline-block bg-[#f7663f] leading-none">
+  <span class="block hero-display font-semibold text-[clamp(3.5rem,6vw,4rem)] uppercase tracking-[-0.04em] text-white leading-none m-0 p-0">
+    $ASCEND
+  </span>
+</div>
+              <h1 class="hero-display hero-title mb-10 font-semibold text-[clamp(4.5rem,9vw,7.5rem)] leading-[1.1] tracking-[-0.05em] text-white hero-type-glow">
                 <span class="block">Liquid</span>
                 <span class="block mt-6">Staking</span>
               </h1>
@@ -182,28 +184,30 @@ app.innerHTML = `
                   protocol. Earn 100% of protocol revenue.
                 </p>
                 <div class="relative w-full flex-1 sm:w-auto">
-                  <button type="button" class="arrow-tile relative mx-auto flex h-18 w-18 items-center justify-center rounded-lg bg-white text-[#f35233] transition-transform hover:scale-105 active:scale-95 sm:mx-0 sm:h-20 sm:w-20 lg:ml-auto lg:h-[68px] lg:w-[68px] lg:-translate-x-[45%] lg:-translate-y-[25%]" aria-label="Open staking flow">
-                    <span class="h-9 w-9 sm:h-10 sm:w-10 lg:h-11 lg:w-11">${icons.arrow}</span>
-                  </button>
+        <button
+  type="button"
+  class="arrow-tile relative mx-auto flex items-center justify-center text-[#F35233] transition-transform hover:scale-105 active:scale-95 sm:mx-0 lg:ml-auto lg:translate-x-[146%] lg:-translate-y-[52%] xl:translate-x-[153%] 2xl:translate-x-[163%]"
+  aria-label="Open staking flow"
+>
+  <span class="flex h-[46px] w-[46px] items-center justify-center translate-x-[1px]">
+    ${icons.arrow}
+  </span>
+</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="panel-column order-2 w-full lg:ml-auto lg:max-w-[360px] lg:translate-x-[-5.5rem] lg:translate-y-6 xl:max-w-[380px] xl:translate-x-[-10rem] xl:translate-y-8 2xl:max-w-[400px] 2xl:translate-x-[-11rem] 2xl:translate-y-9">
+        <div class="panel-column order-2 w-full lg:ml-auto lg:max-w-[367px] lg:translate-x-[-5.5rem] lg:translate-y-6 xl:max-w-[388px] xl:translate-x-[-10rem] xl:translate-y-8 2xl:max-w-[408px] 2xl:translate-x-[-11rem] 2xl:translate-y-9">
           <div class="panel-shell relative rounded-[28px] p-1.5 sm:p-2">
-            <span class="absolute inset-y-0 left-0 w-px bg-[#b96b56]/36"></span>
-            <span class="absolute inset-y-0 right-0 w-px bg-[#b96b56]/36"></span>
-            <span class="absolute inset-x-0 top-0 h-px bg-[#b96b56]/36"></span>
-            <span class="absolute inset-x-0 bottom-0 h-px bg-[#b96b56]/36"></span>
             <div class="panel-card relative rounded-[24px] bg-[radial-gradient(circle_at_50%_0%,rgba(100,20,20,0.35),rgba(40,10,10,0.88)_35%,rgba(15,5,5,0.96)_60%,rgba(8,3,3,1)_100%)] px-4 pb-1 pt-1.5 shadow-[0_24px_48px_rgba(0,0,0,0.5)] sm:px-5 sm:pb-1 md:px-6 md:pb-1.5">
               <div class="panel-header mb-1 flex flex-col items-center text-center">
                 <div class="panel-brand-shell mb-1 h-[28px] w-[28px] shrink-0 sm:h-[30px] sm:w-[30px]">${icons.heroLogo}</div>
-                <h2 class="panel-title text-[clamp(1.2rem,2.8vw,1.6rem)] font-semibold tracking-[-0.05em] text-white hero-type-glow">$Ascend Liquid Stacking</h2>
-                <p class="panel-subtitle mt-0 text-[9px] tracking-[-0.03em] text-white/42 sm:text-[10px]">Stake to earn a part of 100% of Ascend protocol revenue</p>
+                <h2 class="panel-title text-[clamp(1.12rem,2.58vw,1.62rem)] font-medium tracking-[-0.05em] text-white hero-type-glow">$Ascend Liquid Stacking</h2>
+                <p class="panel-subtitle mt-0 text-[9px] tracking-[-0.03em] sm:text-[10px]">Stake to earn a part of 100% of Ascend protocol revenue</p>
               </div>
-              <div class="panel-sections space-y-1">
+              <div class="panel-sections space-y-4">
                 ${renderWalletSection("CHOOSE CARDANO WALLET", cardanoWallets)}
                 ${renderWalletSection("OR SWAP TOKENS TO $ASCEND", swapWallets)}
                 <section class="buy-card wallet-block rounded-[18px] bg-[linear-gradient(180deg,#15141A_0%,#0E0D12_100%)] p-0 overflow-hidden">
@@ -226,7 +230,9 @@ app.innerHTML = `
   </div>
                     <div class="buy-content flex min-h-[46px] flex-1 items-center justify-between gap-2 px-3 py-0.5">
                       <div>
-                        <div class="buy-title text-[12px] font-semibold tracking-[-0.04em] text-white hero-type-glow sm:text-[13px]">Buy $Ascend with card</div>
+<div class="buy-title text-[12px] font-semibold tracking-[-0.04em] text-white hero-type-glow sm:text-[13px] -mt-3">
+  Buy $Ascend with card
+</div>
                         <div class="buy-payments mt-0 flex items-center gap-1.5">
                           <span class="rounded-[3px] bg-white px-1 py-0.5 text-[6.5px] font-black tracking-tighter text-[#253b9a] leading-none">VISA</span>
                           <div class="flex items-center -space-x-1">
